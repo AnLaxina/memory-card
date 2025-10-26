@@ -1,5 +1,17 @@
 header {
     display: flex;
     padding: var(--spacing-medium);
-    justify-content: center;
+    justify-content: space-evenly;
+    gap: var(--spacing-large);
+}
+
+h1 {
+    font-size: var(--font-size-extra-large);
+}
+
+.score-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-large);
 }
