@@ -10,7 +10,7 @@ import "./styles/spacing.css";
 function App() {
     return (
         <>
-            <Header/>
+            <Header text="Pokémon Memory Card Game"/>
         </>
     )
 }

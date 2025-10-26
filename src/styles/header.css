@@ -1,0 +1,5 @@
+header {
+    display: flex;
+    padding: var(--spacing-medium);
+    justify-content: center;
+}
