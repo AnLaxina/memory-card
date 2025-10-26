@@ -1,0 +1,6 @@
+/* Styles that apply for the entire app */
+#root {
+    min-height: 100vh;
+    padding: var(--spacing-small);
+    background-color: var(--background-colour);
+}

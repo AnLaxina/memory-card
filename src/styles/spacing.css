@@ -1,0 +1,6 @@
+:root {
+    /*Apply these spacing variables for both Margin and Padding*/
+    --spacing-small: 0.5rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1.5rem;
+}
