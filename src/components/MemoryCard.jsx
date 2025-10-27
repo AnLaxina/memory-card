@@ -9,7 +9,7 @@ export default function MemoryCard({name = "Pokémon Name"}) {
     return (
         <div className="memory-card">
             <img alt="Vite Logo" src="/vite.svg" style={bigLogo}/>
-            <p>{name}</p>
+            {name}
         </div>
     )
 }
