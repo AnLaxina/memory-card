@@ -17,10 +17,8 @@ main {
 
 @media (width < 600px) {
     .gameboard {
-        background-color: #BF0000;
         padding: var(--spacing-small);
         gap: var(--spacing-small);
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        overflow: scroll;
     }
 }
