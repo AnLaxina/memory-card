@@ -1,4 +1,5 @@
 import Header from "./components/Header.jsx";
+import Gameboard from "./components/Gameboard.jsx";
 
 import "./styles/reset.css";
 import "./styles/app.css";
@@ -11,6 +12,7 @@ function App() {
     return (
         <>
             <Header text="Pokémon Memory Card Game"/>
+            <Gameboard/>
         </>
     )
 }
