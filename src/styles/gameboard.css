@@ -8,7 +8,7 @@ main {
     padding: var(--spacing-medium);
     gap: var(--spacing-medium);
     max-width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .gameboard * {
@@ -19,6 +19,6 @@ main {
     .gameboard {
         padding: var(--spacing-small);
         gap: var(--spacing-small);
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
     }
 }
