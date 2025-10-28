@@ -19,6 +19,7 @@
 .memory-card img {
     background-color: var(--background-colour);
     border-radius: 100%;
+    pointer-events: none;
     width: 200px;
     height: 200px;
     object-fit: contain;
