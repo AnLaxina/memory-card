@@ -15,7 +15,7 @@ main {
     aspect-ratio: 1 / 1;
 }
 
-@media (width < 600px) {
+@media (width < 680px) {
     .gameboard {
         padding: var(--spacing-small);
         gap: var(--spacing-small);
