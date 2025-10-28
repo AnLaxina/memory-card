@@ -9,3 +9,23 @@
     border: solid 4px var(--outline-colour);
     border-radius: 20px;
 }
+
+.memory-card:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 1rem var(--outline-colour-secondary));
+}
+
+.memory-card img {
+    background-color: var(--background-colour);
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+@media (width < 680px) {
+    .memory-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
