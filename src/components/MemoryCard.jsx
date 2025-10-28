@@ -1,7 +1,12 @@
 import "../styles/memorycard.css";
 import {useEffect, useState} from "react";
 
-export default function MemoryCard({name = "Pokémon Name", setScore = () => console.log("Clicked!")}) {
+export default function MemoryCard({
+                                       name = "Pokémon Name",
+                                       increaseScore = (e) => console.log(e.target),
+                                       resetScore = (e) => console.log(e.target),
+                                       addHistory = (e) => console.log(e.target)
+                                   }) {
 
     const [spriteUrl, setSpriteUrl] = useState("/vite.svg");
 
@@ -21,7 +26,11 @@ export default function MemoryCard({name = "Pokémon Name", setScore = () => con
     }, [name])
 
     return (
-        <div className="memory-card" onClick={setScore}>
+        <div className="memory-card" onClick={(event) => {
+            increaseScore(event);
+            addHistory(event);
+            resetScore(event);
+        }}>
             <img alt={`${name}, Pokemon`} src={spriteUrl}/>
             {name}
         </div>

@@ -2,7 +2,7 @@ import MemoryCard from "./MemoryCard.jsx";
 
 import "../styles/gameboard.css";
 
-export default function Gameboard({increaseScore}) {
+export default function Gameboard({increaseScore, resetScore, addHistory}) {
 
     const POKEMON_NAMES = [
         "Garchomp", "Pikachu", "Charizard",
@@ -16,7 +16,8 @@ export default function Gameboard({increaseScore}) {
     // }
 
     function addMemoryCards() {
-        return POKEMON_NAMES.map((name) => <MemoryCard key={name} name={name} setScore={increaseScore}/>);
+        return POKEMON_NAMES.map((name) => <MemoryCard key={name} name={name} increaseScore={increaseScore}
+                                                       resetScore={resetScore} addHistory={addHistory}/>);
     }
 
     return (

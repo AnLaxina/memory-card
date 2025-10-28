@@ -12,15 +12,32 @@ import {useState} from "react";
 
 function App() {
     const [score, setScore] = useState(0);
+    // This is for keeping track of the clicked memory cards, if it's clicked and it already in the set, then restart score
+    const [history, setHistory] = useState(new Set());
 
-    function increaseScore() {
-        setScore(score + 1);
+    function addHistory(event) {
+        const name = event.target.textContent;
+        setHistory(prev => new Set(prev.add(name)))
+    }
+
+    function resetScore(event) {
+        const name = event.target.textContent;
+        if (history.has(name)) {
+            setScore(0);
+        }
+    }
+
+    function increaseScore(event) {
+        const name = event.target.textContent;
+        if (!history.has(name)) {
+            setScore(score + 1);
+        }
     }
 
     return (
         <>
             <Header text="Pokémon Memory Card Game" score={score}/>
-            <Gameboard increaseScore={increaseScore}/>
+            <Gameboard increaseScore={increaseScore} resetScore={resetScore} addHistory={addHistory}/>
         </>
     )
 }
