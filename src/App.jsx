@@ -7,12 +7,20 @@ import "./styles/font.css";
 import "./styles/colour.css";
 import "./styles/spacing.css";
 
+import {useState} from "react";
+
 
 function App() {
+    const [score, setScore] = useState(0);
+
+    function increaseScore() {
+        setScore(score + 1);
+    }
+
     return (
         <>
-            <Header text="Pokémon Memory Card Game"/>
-            <Gameboard/>
+            <Header text="Pokémon Memory Card Game" score={score}/>
+            <Gameboard increaseScore={increaseScore}/>
         </>
     )
 }
