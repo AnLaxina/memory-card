@@ -8,6 +8,7 @@
     padding: var(--spacing-medium);
     border: solid 4px var(--outline-colour);
     border-radius: 20px;
+    user-select: none;
 }
 
 .memory-card:hover {
