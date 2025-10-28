@@ -4,19 +4,25 @@ import "../styles/gameboard.css";
 
 export default function Gameboard() {
 
-    function addMemoryCards(numberOfMemoryCards) {
-        const memoryCards = [];
-        for (let i = 0; i < numberOfMemoryCards; i++) {
-            memoryCards.push(<MemoryCard/>);
-        }
-        return memoryCards.map((item, index) => <MemoryCard key={`Chicken` + index}/>);
+    const POKEMON_NAMES = [
+        "Garchomp", "Pikachu", "Charizard",
+        "Lucario", "Squirtle", "Metagross",
+        "Gible", "Gabite", "Mewtwo",
+        "Mew", "Eevee", "Chimchar"];
+
+    // Will keep this here in case I want to shuffle the order of MemoryCards
+    // function getRandomIndex(numberOfMemoryCards = 12) {
+    //     return Math.floor(Math.random() * numberOfMemoryCards);
+    // }
+
+    function addMemoryCards() {
+        return POKEMON_NAMES.map((name) => <MemoryCard key={name} name={name}/>);
     }
-
-
+    
     return (
         <main>
             <div className="gameboard">
-                {addMemoryCards(12)}
+                {addMemoryCards()}
             </div>
         </main>
     )
