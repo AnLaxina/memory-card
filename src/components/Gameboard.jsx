@@ -8,9 +8,10 @@ export default function Gameboard({onClick}) {
 
     const POKEMON_NAMES = [
         "Garchomp", "Pikachu", "Charizard",
-        "Lucario", "Squirtle", "Metagross",
-        "Gible", "Gabite", "Mewtwo",
-        "Mew", "Eevee", "Chimchar"];
+        "Lucario", "Bulbasaur", "Metagross",
+        "Blastoise", "Absol", "Mewtwo",
+        "Mew", "Eevee", "Gengar",
+        "Blaziken", "Gardevoir", "Flygon", "Arcanine"];
 
     const [memoryCards, setMemoryCards] = useState(POKEMON_NAMES);
 
