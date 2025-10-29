@@ -3,9 +3,7 @@ import {useEffect, useState} from "react";
 
 export default function MemoryCard({
                                        name = "Pokémon Name",
-                                       increaseScore = (e) => console.log(e.target),
-                                       resetScore = (e) => console.log(e.target),
-                                       addHistory = (e) => console.log(e.target),
+                                       onClick = (event) => console.log(`You clicked ${event.target}!`),
                                        shuffleCards = () => console.log("Shuffle time!")
                                    }) {
 
@@ -28,9 +26,7 @@ export default function MemoryCard({
 
     return (
         <div className="memory-card" onClick={(event) => {
-            increaseScore(event);
-            addHistory(event);
-            resetScore(event);
+            onClick(event);
             shuffleCards();
         }}>
             <img alt={`${name}, Pokemon`} src={spriteUrl}/>

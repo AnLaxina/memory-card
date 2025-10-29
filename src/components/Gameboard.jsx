@@ -4,7 +4,7 @@ import _ from "lodash";
 import "../styles/gameboard.css";
 import {useState} from "react";
 
-export default function Gameboard({increaseScore, resetScore, addHistory}) {
+export default function Gameboard({onClick}) {
 
     const POKEMON_NAMES = [
         "Garchomp", "Pikachu", "Charizard",
@@ -20,8 +20,7 @@ export default function Gameboard({increaseScore, resetScore, addHistory}) {
     }
 
     function addMemoryCards() {
-        return memoryCards.map((name) => <MemoryCard key={name} name={name} increaseScore={increaseScore}
-                                                     resetScore={resetScore} addHistory={addHistory}
+        return memoryCards.map((name) => <MemoryCard key={name} name={name} onClick={onClick}
                                                      shuffleCards={shuffleCards}/>);
     }
 

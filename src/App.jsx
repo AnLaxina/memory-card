@@ -22,21 +22,25 @@ function App() {
         }
     }, [score]);
 
-    function addHistory(event) {
+    function onClick(event) {
         const name = event.target.textContent;
+        increaseScore(name);
+        addHistory(name);
+        resetScore(name);
+    }
+
+    function addHistory(name) {
         setHistory(prev => new Set(prev.add(name)))
     }
 
-    function resetScore(event) {
-        const name = event.target.textContent;
+    function resetScore(name) {
         if (history.has(name)) {
             setScore(0);
             setHistory(new Set());
         }
     }
 
-    function increaseScore(event) {
-        const name = event.target.textContent;
+    function increaseScore(name) {
         if (!history.has(name)) {
             setScore(score + 1);
         }
@@ -45,7 +49,7 @@ function App() {
     return (
         <>
             <Header text="Pokémon Memory Card Game" score={score} bestScore={bestScore}/>
-            <Gameboard increaseScore={increaseScore} resetScore={resetScore} addHistory={addHistory}/>
+            <Gameboard onClick={onClick}/>
         </>
     )
 }
