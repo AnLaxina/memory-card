@@ -9,7 +9,7 @@ export default function MemoryCard({
                                        shuffleCards = () => console.log("Shuffle time!")
                                    }) {
 
-    const [spriteUrl, setSpriteUrl] = useState("/vite.svg");
+    const [spriteUrl, setSpriteUrl] = useState("/pokeball.svg");
 
     useEffect(() => {
         async function getImage(pokemonName = "pikachu") {
