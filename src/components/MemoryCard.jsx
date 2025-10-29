@@ -5,7 +5,8 @@ export default function MemoryCard({
                                        name = "Pokémon Name",
                                        increaseScore = (e) => console.log(e.target),
                                        resetScore = (e) => console.log(e.target),
-                                       addHistory = (e) => console.log(e.target)
+                                       addHistory = (e) => console.log(e.target),
+                                       shuffleCards = () => console.log("Shuffle time!")
                                    }) {
 
     const [spriteUrl, setSpriteUrl] = useState("/vite.svg");
@@ -30,6 +31,7 @@ export default function MemoryCard({
             increaseScore(event);
             addHistory(event);
             resetScore(event);
+            shuffleCards();
         }}>
             <img alt={`${name}, Pokemon`} src={spriteUrl}/>
             {name}

@@ -1,6 +1,8 @@
 import MemoryCard from "./MemoryCard.jsx";
+import _ from "lodash";
 
 import "../styles/gameboard.css";
+import {useState} from "react";
 
 export default function Gameboard({increaseScore, resetScore, addHistory}) {
 
@@ -10,14 +12,17 @@ export default function Gameboard({increaseScore, resetScore, addHistory}) {
         "Gible", "Gabite", "Mewtwo",
         "Mew", "Eevee", "Chimchar"];
 
+    const [memoryCards, setMemoryCards] = useState(POKEMON_NAMES);
+
     // Will keep this here in case I want to shuffle the order of MemoryCards
-    // function getRandomIndex(numberOfMemoryCards = 12) {
-    //     return Math.floor(Math.random() * numberOfMemoryCards);
-    // }
+    function shuffleCards() {
+        setMemoryCards(_.shuffle(memoryCards));
+    }
 
     function addMemoryCards() {
-        return POKEMON_NAMES.map((name) => <MemoryCard key={name} name={name} increaseScore={increaseScore}
-                                                       resetScore={resetScore} addHistory={addHistory}/>);
+        return memoryCards.map((name) => <MemoryCard key={name} name={name} increaseScore={increaseScore}
+                                                     resetScore={resetScore} addHistory={addHistory}
+                                                     shuffleCards={shuffleCards}/>);
     }
 
     return (
