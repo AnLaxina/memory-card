@@ -7,13 +7,20 @@ import "./styles/font.css";
 import "./styles/colour.css";
 import "./styles/spacing.css";
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 
 function App() {
     const [score, setScore] = useState(0);
+    const [bestScore, setBestScore] = useState(0);
     // This is for keeping track of the clicked memory cards, if it's clicked and it already in the set, then restart score
     const [history, setHistory] = useState(new Set());
+
+    useEffect(() => {
+        if (score > bestScore) {
+            setBestScore(score);
+        }
+    }, [score]);
 
     function addHistory(event) {
         const name = event.target.textContent;
@@ -24,6 +31,7 @@ function App() {
         const name = event.target.textContent;
         if (history.has(name)) {
             setScore(0);
+            setHistory(new Set());
         }
     }
 
@@ -36,7 +44,7 @@ function App() {
 
     return (
         <>
-            <Header text="Pokémon Memory Card Game" score={score}/>
+            <Header text="Pokémon Memory Card Game" score={score} bestScore={bestScore}/>
             <Gameboard increaseScore={increaseScore} resetScore={resetScore} addHistory={addHistory}/>
         </>
     )
