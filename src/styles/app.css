@@ -7,3 +7,24 @@
     padding: var(--spacing-small);
     background-color: var(--background-colour);
 }
+
+strong {
+    font-weight: bold;
+}
+
+footer {
+    display: grid;
+    justify-items: center;
+}
+
+.instructions {
+    font-size: var(--font-size-medium);
+    align-self: center;
+    padding: var(--spacing-small);
+}
+
+@media (width < 680px) {
+    #root {
+        gap: var(--spacing-small);
+    }
+}

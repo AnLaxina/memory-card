@@ -49,7 +49,11 @@ function App() {
     return (
         <>
             <Header text="Pokémon Memory Card Game" score={score} bestScore={bestScore}/>
+            <p className="instructions"><strong>Instructions:</strong> Choose any card you like! But if you choose the
+                same card twice the score
+                restarts!</p>
             <Gameboard onClick={onClick}/>
+            <footer><p>2025 AnLaxina</p></footer>
         </>
     )
 }
