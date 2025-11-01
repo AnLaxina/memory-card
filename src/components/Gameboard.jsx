@@ -11,7 +11,7 @@ export default function Gameboard({onClick}) {
         "Lucario", "Bulbasaur", "Metagross",
         "Blastoise", "Absol", "Mewtwo",
         "Mew", "Eevee", "Gengar",
-        "Blaziken", "Gardevoir", "Flygon", "Arcanine"];
+        "Blaziken", "Gardevoir", "Flygon", "Arcanine", "Snubbull"];
 
     const [memoryCards, setMemoryCards] = useState(POKEMON_NAMES);
 
